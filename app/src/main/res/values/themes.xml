@@ -1,0 +1,12 @@
+<resources>
+
+  <style name="ThemeAutoPark">
+    <item name="carColorPrimary">#00ACC1</item>
+    <item name="carColorPrimaryDark">#006064</item>
+    <item name="carColorSecondary">#FFB300</item>
+    <item name="carColorSecondaryDark">#FF6F00</item>
+  </style>
+
+  <style name="Theme.AutoPark"
+         parent="android:Theme.Material.Light.NoActionBar" />
+</resources>
