@@ -13,14 +13,10 @@
       android:theme="@style/Theme.Material3.DayNight.NoActionBar"
       >
 
+    <!-- Car -->
     <meta-data
-        android:name="com.android.automotive"
+        android:name="com.google.android.gms.car.application"
         android:resource="@xml/autopark_app_desc"
-        tools:ignore="MetadataTagInsideApplicationTag"
-        />
-    <meta-data
-        android:name="androidx.car.app.theme"
-        android:resource="@style/ThemeAutoPark"
         tools:ignore="MetadataTagInsideApplicationTag"
         />
     <meta-data
@@ -29,6 +25,16 @@
         tools:ignore="MetadataTagInsideApplicationTag"
         />
 
+    <service
+        android:name="com.alorma.autopark.AutoParkAppService"
+        android:exported="true"
+        >
+      <intent-filter>
+        <action android:name="androidx.car.app.CarAppService" />
+      </intent-filter>
+    </service>
+
+    <!-- App -->
     <activity
         android:name="com.alorma.autopark.MainActivity"
         android:exported="true"
@@ -40,17 +46,6 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-
-    <service
-        android:name=".AutoParkAppService"
-        android:exported="true"
-        >
-      <intent-filter>
-        <action android:name="androidx.car.app.CarAppService" />
-
-        <category android:name="androidx.car.app.category.POI" />
-      </intent-filter>
-    </service>
 
 
   </application>
